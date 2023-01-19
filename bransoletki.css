@@ -1,0 +1,20 @@
+.card{border: none; margin-bottom: 10px;}
+.branDivCol{display: flex;align-items: center;text-align: center;}
+.branDivCol .card-title {font-size: 1rem;color:black;}
+.container{padding: 10px;}
+
+.card:hover img
+{transform: scale(1.1 , 1.1);
+    transition: .25s ease;
+    font-size:23px;}
+
+
+   .card:hover .card-title{
+    transition: .25s ease;
+    font-size:23px;color: #fc4a1a;  /* fallback for old browsers */
+    color: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
+    color: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+
+   
+   }  
