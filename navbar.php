@@ -63,7 +63,7 @@ include("mechanism/dbconn.php");
                ?>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link ">Koszyk</a>
+                    <a href="./basket.php" class="nav-link ">Koszyk</a>
                   </li>
                 </ul>
                
