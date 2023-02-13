@@ -4,8 +4,8 @@ $product_title = $_GET['message']; // get info from url
 
 
 
-$sql1 = "SELECT * FROM products WHERE title='".$product_title."'";
-$result1= $conn->query($sql1);
+    
+
 
 $product_id = array();  // declare the array
 print_r($product_id);
@@ -13,6 +13,7 @@ print_r($product_id);
 // check if input addtocart has been set
 if(filter_input(INPUT_POST,'add-to-cart'))
 {
+    
     if(isset($_SESSION['shoping-cart'])){
 
     $count = count($_SESSION['shoping-cart']);
@@ -34,26 +35,40 @@ if(filter_input(INPUT_POST,'add-to-cart'))
                 $_SESSION['shoping-cart'][$i]['quantity'] += filter_input(INPUT_POST,'quantity');
                $_SESSION['shoping-cart'][$i];
             
+      
+               
                 ?>
 
                 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                <?php if ($result1->num_rows > 0) {
-                    while($row1 = $result1->fetch_assoc()) { echo $row1["img"];}}?>
-                <script>
-                                        Swal.fire({
-                    title: 'Sweet!',
-                    text: 'Modal with a custom image.',
-                    imageUrl: '
-                    <?php if ($result1->num_rows > 0) {
-                    while($row1 = $result1->fetch_assoc()) { echo $row1["img"];}}?>
-                    ',
-                    imageWidth: 400,
-                    imageHeight: 200,
-                    imageAlt: 'Custom image',
-                    })
+               
+                 <script>
+                    Swal.fire({
+                        title: 'Dodano do koszyka',
+                        icon: 'success',
+                        showDenyButton: true,
+                        confirmButtonColor: '#3085d6',
+                        denyButtonText: `Przejdz do koszyk`,
+                        confirmButtonText: 'Powrot do bransoletki'
+                        }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "bransoletki.php"
+                           
+                        }
+                        else if(result.isDenied){
+                            window.location.href="basket.php"
+                        }
+                        })
+                //  Swal.fire({ title: "WOW!",
+                // text: "Message!",
+                // type: "success"}).then(okay => {
+                // if (okay) {
+                //     window.location.href = "produkt.php";
+                // }
+                                    
                 </script>
                 
             <?php
+    
 
 
 // header("location: ./produkt.php?message=". $_SESSION['shoping-cart'][$i]['title']);
@@ -102,7 +117,7 @@ if ($result->num_rows > 0) {
 <div class="container">
     <div class="row mt-5">
     <div class="col-lg-5">
-        <img class="img-fluid" src="./img/<?php echo $row["img"];?>" alt="<?php echo $row["title"];?>">
+        <img id="img-bransoletka" class="img-fluid" src="./img/<?php echo $row["img"];?>" alt="<?php echo $row["title"];?>">
     </div>
     <div class="col-lg-5">
 
