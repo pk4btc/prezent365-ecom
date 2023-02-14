@@ -9,7 +9,9 @@ $product_title = $_GET['message']; // get info from url
 
 $product_id = array();  // declare the array
 print_r($product_id);
-
+?>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<?php
 // check if input addtocart has been set
 if(filter_input(INPUT_POST,'add-to-cart'))
 {
@@ -22,53 +24,67 @@ if(filter_input(INPUT_POST,'add-to-cart'))
 
     if(!in_array(filter_input(INPUT_GET,'title'),$product_id)){
         $_SESSION['shoping-cart'][$count]=array(
-
             'title'=>filter_input(INPUT_GET,'title'),
             'price'=>filter_input(INPUT_POST,'price'),
             'quantity'=>filter_input(INPUT_POST,'quantity')
-           
-        );
+        ); ?>
+        <script>
+            Swal.fire({
+                title: 'Dodano do koszyka',
+                icon: 'success',
+                showDenyButton: true,
+                confirmButtonColor: '#3085d6',
+                denyButtonText: `Przejdz do koszyk`,
+                confirmButtonText: 'Powrot do bransoletki'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "bransoletki.php"
+                   
+                }
+                else if(result.isDenied){
+                    window.location.href="basket.php"
+                }
+                })
+        //  Swal.fire({ title: "WOW!",
+        // text: "Message!",
+        // type: "success"}).then(okay => {
+        // if (okay) {
+        //     window.location.href = "produkt.php";
+        // }
+                            
+        </script><?php
     }else{
         
         for($i=0; $i<count($product_id); $i++){
             if($product_id[$i] == filter_input(INPUT_GET,'title')){
                 $_SESSION['shoping-cart'][$i]['quantity'] += filter_input(INPUT_POST,'quantity');
                $_SESSION['shoping-cart'][$i];
-            
-      
-               
-                ?>
-
-                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-               
-                 <script>
-                    Swal.fire({
-                        title: 'Dodano do koszyka',
-                        icon: 'success',
-                        showDenyButton: true,
-                        confirmButtonColor: '#3085d6',
-                        denyButtonText: `Przejdz do koszyk`,
-                        confirmButtonText: 'Powrot do bransoletki'
-                        }).then((result) => {
-                        if (result.isConfirmed) {
-                            window.location.href = "bransoletki.php"
-                           
-                        }
-                        else if(result.isDenied){
-                            window.location.href="basket.php"
-                        }
-                        })
-                //  Swal.fire({ title: "WOW!",
-                // text: "Message!",
-                // type: "success"}).then(okay => {
-                // if (okay) {
-                //     window.location.href = "produkt.php";
-                // }
-                                    
-                </script>
-                
-            <?php
-    
+               ?>
+               <script>
+                   Swal.fire({
+                       title: 'Dodano do koszyka',
+                       icon: 'success',
+                       showDenyButton: true,
+                       confirmButtonColor: '#3085d6',
+                       denyButtonText: `Przejdz do koszyk`,
+                       confirmButtonText: 'Powrot do bransoletki'
+                       }).then((result) => {
+                       if (result.isConfirmed) {
+                           window.location.href = "bransoletki.php"
+                          
+                       }
+                       else if(result.isDenied){
+                           window.location.href="basket.php"
+                       }
+                       })
+               //  Swal.fire({ title: "WOW!",
+               // text: "Message!",
+               // type: "success"}).then(okay => {
+               // if (okay) {
+               //     window.location.href = "produkt.php";
+               // }
+                                   
+               </script><?php
 
 
 // header("location: ./produkt.php?message=". $_SESSION['shoping-cart'][$i]['title']);
@@ -93,6 +109,32 @@ if(filter_input(INPUT_POST,'add-to-cart'))
             'quantity'=>filter_input(INPUT_POST,'quantity'),
 
         );
+        ?>
+               <script>
+                   Swal.fire({
+                       title: 'Dodano do koszyka',
+                       icon: 'success',
+                       showDenyButton: true,
+                       confirmButtonColor: '#3085d6',
+                       denyButtonText: `Przejdz do koszyk`,
+                       confirmButtonText: 'Powrot do bransoletki'
+                       }).then((result) => {
+                       if (result.isConfirmed) {
+                           window.location.href = "bransoletki.php"
+                          
+                       }
+                       else if(result.isDenied){
+                           window.location.href="basket.php"
+                       }
+                       })
+               //  Swal.fire({ title: "WOW!",
+               // text: "Message!",
+               // type: "success"}).then(okay => {
+               // if (okay) {
+               //     window.location.href = "produkt.php";
+               // }
+                                   
+               </script><?php
             
 
     }

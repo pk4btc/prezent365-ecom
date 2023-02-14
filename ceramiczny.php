@@ -1,23 +1,22 @@
 <?php include('navbar.php') ?>
 <head>
-    <link rel="stylesheet" type="text/css" href="ceramiczny.css"/>
+    <link rel="stylesheet" href="ceramiczny.css"/>
 
 </head>
 
 
 <section>
-<div class="conatiner">
 <div class="row">
 
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <div id="img-part" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
  
             <img class="img-fluid" src="img\ceramiczny.jpg">
 
 
     </div>
     
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <div class="row">
+    <div  class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="row text-part" >
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Podaj Tekst na swoj kubek</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
@@ -59,7 +58,6 @@
         </div>
 
 
-</div>
 
 </div>
 

@@ -7,10 +7,14 @@
 //   };
 // echo "Connected successfully";
 
-$serverName = "localhost";
-$dBUsername = "root";
-$dBPassword = "qwerty123";
-$dBName = "sklep1";
+// $serverName = "localhost";
+// $dBUsername = "root";
+// $dBPassword = "qwerty123";
+// $dBName = "sklep1";
+$serverName = "mysql01.prezent365.beep.pl";
+$dBUsername = "prezent365admin";
+$dBPassword = "calineczka";
+$dBName = "przent365";
 
 $conn= mysqli_connect($serverName,$dBUsername,$dBPassword,$dBName);
 if(!$conn){

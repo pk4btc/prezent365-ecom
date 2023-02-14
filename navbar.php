@@ -11,9 +11,10 @@ include("mechanism/dbconn.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-
     <script src="js/bootstrap.min.js">
     </script>
+
+    
     <title>Prezent365</title>
 </head>
 <body>
@@ -57,7 +58,7 @@ include("mechanism/dbconn.php");
                     } else{
                       echo "<ul class='navbar-nav me-auto mb-2 mb-lg-0  align-items-end'>
                       <li class='nav-item'>
-                        <a  href='login.php' class='nav-link '>Zaloguj ssie</a>
+                        <a  href='login.php' class='nav-link '>Zaloguj sie</a>
                       </li>";
                     }
                ?>
